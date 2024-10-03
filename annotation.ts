@@ -32,3 +32,28 @@ let person: { name: string; age: number; isPass: boolean } = {
     age: 20,
     isPass: true,
 }
+
+// function
+
+// void
+const greet = (): void => {
+    console.log('welcome to arrow function');
+}
+
+// never
+const logErr = (message: string): never => {
+    throw new Error(message)
+}
+logErr('sth went error')
+// logErr(99) error 
+
+function calc(a: number, b: number): number {
+    return a + b
+}
+calc(10, 20)
+// calc('10',20) error
+
+let calcTwo = function (a: number, b: number): number {
+    return a + b
+}
+console.log(calcTwo(12,22));
