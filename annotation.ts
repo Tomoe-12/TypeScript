@@ -41,10 +41,10 @@ const greet = (): void => {
 }
 
 // never
-const logErr = (message: string): never => {
-    throw new Error(message)
-}
-logErr('sth went error')
+// const logErr = (message: string): never => {
+//     throw new Error(message)
+// }
+// logErr('sth went error')
 // logErr(99) error 
 
 function calc(a: number, b: number): number {
@@ -56,4 +56,29 @@ calc(10, 20)
 let calcTwo = function (a: number, b: number): number {
     return a + b
 }
-console.log(calcTwo(12,22));
+console.log(calcTwo(12, 22));
+
+
+
+// classes
+//built in class
+let today: Date = new Date();
+
+// custom class
+class House { }
+let house: House = new House();
+
+// one 
+const jsonData = '{"name":"ThiHan","age" : 20 , "isPass":true}'
+const personData: { name: string, age: number, isPass: boolean } = JSON.parse(jsonData)
+console.log(personData);
+
+
+// two and three
+let isPass: boolean | string;
+
+const permission = (): void => {
+    isPass = "pass"
+    console.log('permission approve');
+}
+
