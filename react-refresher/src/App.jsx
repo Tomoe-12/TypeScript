@@ -1,22 +1,23 @@
 import { useState } from 'react'
-
+import CustomText from './components/CustomText.jsx'
 
 function App() {
   const [text, setText] = useState('hello')
 
-  const inputHandler = (e) =>{
+  const inputHandler = (e) => {
     setText(e.target.value)
   }
 
-  const clearVal = (e) =>{
+  const clearVal = () => {
     setText('')
   }
   return (
     <>
-      <h1 className='text-red-500'>{text}</h1>
-     input feld ::  <input className='border border-black' type="text" value={text} onChange={(e)=>inputHandler(e)} />
-     <h1 className='text-red-500'>{text}</h1>
-     <button className='border border-red-400' onClick={(e) => clearVal(e)}>Set to empty button </button>
+      <CustomText text={text} /> <br />
+      <CustomText text={text} /><br />
+      <CustomText text={text} /><br />
+      input feld ::  <input className='border border-black' type="text" value={text} onChange={(e) => inputHandler(e)} /> <br />
+      <button className='border border-red-400' onClick={clearVal}>Set to empty button </button>
     </>
   )
 }
